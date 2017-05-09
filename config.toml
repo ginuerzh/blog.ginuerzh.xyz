@@ -9,7 +9,7 @@ googleAnalytics = "UA-98791308-1"
 [params]
   #subtitle = "Build a beautiful and simple website in minutes"
   logo = "img/avatar-icon.png"
-  favicon = "img/favicon.ico"
+  # favicon = "img/favicon.ico"
   # dateFormat = "January 2, 2006" # default date format
   commit = false
   rss = true
@@ -17,14 +17,14 @@ googleAnalytics = "UA-98791308-1"
 #  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
 [[params.bigimg]]
-  src = "img/triangle.jpg"
-  desc = "Triangle"
+  src = "img/sunset.jpg"
+  desc = "Sunset"
 [[params.bigimg]]
-  src = "img/sphere.jpg"
-  desc = "Sphere"
+  src = "img/dishuilake.jpg"
+  desc = "Dishui Lake"
 [[params.bigimg]]
-  src = "img/hexagon.jpg"
-  desc = "Hexagon"
+  src = "img/wetland.jpg"
+  desc = "Dongtan Wetland"
 
 [author]
   name = "Gerry"
@@ -48,17 +48,17 @@ googleAnalytics = "UA-98791308-1"
 # [languages.en]
 #   weight = 0
 #   languageName = "English"
-# 
+#
 # [[languages.en.menu.main]]
 #   name = "Categories"
 #   url = "categories/"
 #   weight = 1
-# 
+#
 # [[languages.en.menu.main]]
 #   name = "Tags"
 #   url = "tags/"
 #   weight = 2
-# 
+#
 # [[languages.en.menu.main]]
 #   name = "About"
 #   url = "about/"
@@ -82,5 +82,3 @@ googleAnalytics = "UA-98791308-1"
   name = "关于"
   url = "about/"
   weight = 3
-
-
