@@ -3,6 +3,7 @@ date = "2017-05-09T22:00:00+08:00"
 subtitle = "Genesis"
 tags = ["misc"]
 title = "0.0"
+url = "genesis"
 
 +++
 

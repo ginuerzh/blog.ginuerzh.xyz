@@ -1,4 +1,4 @@
-baseURL = "http://blog.ginuerzh.xyz/"
+baseURL = "https://blog.ginuerzh.xyz/"
 DefaultContentLanguage = "zh"
 title = "ginuerzh"
 theme = "beautifulhugo"
