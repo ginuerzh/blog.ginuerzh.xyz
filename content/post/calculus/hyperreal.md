@@ -7,7 +7,7 @@ subtitle = "Infinitesimal"
 url = "/calculus/hyperreal"
 +++
 
-我不是天才，似乎也不是蠢材，这么多年来微积分中的极限概念还是没有彻底的搞明白。不过好在通往微积分的大道不止这一条，虽然不能与罗马相比，但还是有可选的余地。
+我不是天才，似乎也不是蠢材，这么多年来微积分中的极限概念还是没有彻底的搞明白。不过好在通往微积分的大道不止这一条，虽然不能与罗马相比，但还是有可选的余地，此乃舍远求近也！
 
 这个后备选手就是[超实数](https://en.wikipedia.org/wiki/Hyperreal_number)(Hyperreal number)，在我看到的一篇[关于导数的文章](https://betterexplained.com/articles/calculus-building-intuition-for-the-derivative/)中提到了两种求导的方法：一种是公认的极限(Limits)方法，另外一种是不太出名的[无穷小](https://en.wikipedia.org/wiki/Infinitesimal)(Infinitesimals)方法。而无穷小正是超实数域中定义的一种真实存在的数。
 
