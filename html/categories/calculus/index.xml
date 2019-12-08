@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Calculus on ginuerzh</title>
+    <link>https://blog.ginuerzh.xyz/categories/calculus/</link>
+    <description>Recent content in Calculus on ginuerzh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>ginuerzh@gmail.com (Gerry)</managingEditor>
+    <webMaster>ginuerzh@gmail.com (Gerry)</webMaster>
+    <lastBuildDate>Thu, 26 Oct 2017 15:04:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.ginuerzh.xyz/categories/calculus/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>超实数思维导图</title>
+      <link>https://blog.ginuerzh.xyz/calculus/hyperreal/</link>
+      <pubDate>Thu, 26 Oct 2017 15:04:00 +0800</pubDate>
+      <author>ginuerzh@gmail.com (Gerry)</author>
+      <guid>https://blog.ginuerzh.xyz/calculus/hyperreal/</guid>
+      <description>我不是天才，似乎也不是蠢材，这么多年来微积分中的极限概念还是没有彻底的搞明白。不过好在通往微积分的大道不止这一条，虽然不能与罗马相比，但还是</description>
+    </item>
+    
+  </channel>
+</rss>
