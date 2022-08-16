@@ -22,7 +22,7 @@ url = "/taste/self-hosting"
 
 ## 基础软件平台
 
-为了部署和管理方便，我使用了k3s作为基础平台，因此对于工具的选择上就会更倾向于提供Docker镜像的服务，这样后续的升级或迁移也会更加方便。直接使用Docker部署或者直接裸机部署然也是没问题的，只是个人倾向而已。
+为了部署和管理方便，我使用了k3s作为基础平台，因此对于工具的选择上就会更倾向于提供Docker镜像的服务，这样后续的升级或迁移也会更加方便。直接使用Docker部署或者直接裸机部署当然也是没问题的，只是个人倾向而已。
 
 我是把Pi作为集群的主节点，PC作为工作节点，所有工作负载全部跑在PC上。Pi目前当做软路由充当网关使用，同时做为DNS服务器和Wireguard VPN入口。
 
@@ -42,7 +42,7 @@ url = "/taste/self-hosting"
 
 ### 照片
 
-照片数据的管理我在[上一篇](photoprism.md)文章中已经详细讲过，这里就不再赘述。
+照片数据的管理我在[上一篇](/taste/photoprism.md)文章中已经详细讲过，这里就不再赘述。
 
 ### 音频
 
@@ -72,16 +72,18 @@ RSS订阅虽然现在会觉得是老古董了，毕竟在一个内容快速产�
 
 ## 文件共享
 
-这方面我的需求不是很大，也不复杂，所以就部署了一个[Minio](https://min.io/)服务简单的应付一下。如果是通过Cloudflare来暴露服务要注意一下，Cloudflare对于上行流量有限制，文件过大(大概100MB以上)可能无法上传。之所以没有选用功能更强大的Nextcloud或Owncloud等网盘服务，主要是这类软件功能对我来说过剩了，这或许就是传说中的要你命三千吧。
+这方面我的需求不是很大，也不复杂，所以就部署了一个[Minio](https://min.io/)服务简单的应付一下。如果是通过Cloudflare来暴露服务要注意一下，Cloudflare对于上行流量有限制，文件过大(大概100MB左右)可能无法上传成功。之所以没有选用功能更强大的Nextcloud等网盘服务，主要是这类软件功能对我来说过剩了，这或许就是传说中的要你命三千吧。
 
-为了紧跟潮流，我还额外部署了[IPFS](https://ipfs.io/)网关，这个是公开可访问的，地址为[https://ipfs.ginuerzh.xyz/ipfs/](https://ipfs.ginuerzh.xyz/ipfs/bafybeifx7yeb55armcsxwwitkymga5xf53dxiarykms3ygqic223w5sk3m/)。当然由于是私有服务，可靠性无法保证。
+为了紧跟潮流，我还额外部署了[IPFS](https://ipfs.io/)网关，是公开可访问的，地址为[https://ipfs.ginuerzh.xyz/ipfs/](https://ipfs.ginuerzh.xyz/ipfs/bafybeifx7yeb55armcsxwwitkymga5xf53dxiarykms3ygqic223w5sk3m/)。当然由于是私有服务，可靠性无法保证。
 
 ## 平台管理
 
-上面讲的都是平台上的应用服务，平台本身也需要管理，包括k3s集群和节点系统。
+上面讲的都是平台上的应用服务，平台本身也需要管理，包括k3s集群和节点网络。
 
-对于k3s服务，本来是想通过Cloudflare将API服务直接暴露到公网，再通过[Lens](https://k8slens.dev/)来管理，实际操作下来发现不可行，可能是安全考虑Cloudflare限制了请求，于是只能再借助与NAT云主机中转。后来又在集群中部署了[Rancher](https://rancher.com/)，这样就可以通过CF在公网进行访问了。
+对于k3s，本来是想通过Cloudflare将API服务直接暴露到公网，再通过[Lens](https://k8slens.dev/)来管理，实际操作下来发现不可行，可能是安全考虑Cloudflare限制了这类请求，于是只能再借助于NAT云主机中转。后来又在集群中部署了[Rancher](https://rancher.com/)，这样就可以通过CF在公网进行访问和管理了。
 
-至于节点本身也可以借助于[Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/tutorials/ssh/)来访问内网的SSH服务。由于我在Pi上部署了Wireguard服务，就顺便通过端口转发，将wireguard的端口映射到NAT云主机上了，直接通过wireguard来访问内网会更便捷。
+节点本身也可以借助于[Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/tutorials/ssh/)来访问内网的SSH服务。由于我在Pi上部署了Wireguard服务，就顺便通过端口转发，将wireguard的端口映射到NAT云主机上了，直接通过wireguard来访问内网会更便捷。
+
+## 完
 
 以上就是我的全部家当，仅供参考，如有雷同，纯属巧合！
