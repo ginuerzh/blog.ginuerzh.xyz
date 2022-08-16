@@ -42,7 +42,7 @@ url = "/taste/self-hosting"
 
 ### 照片
 
-照片数据的管理我在[上一篇](/taste/photoprism.md)文章中已经详细讲过，这里就不再赘述。
+照片数据的管理我在[上一篇](/taste/photoprism/)文章中已经详细讲过，这里就不再赘述。
 
 ### 音频
 
