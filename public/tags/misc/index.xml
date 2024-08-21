@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Misc on ginuerzh</title>
+    <link>https://blog.ginuerzh.xyz/tags/misc/</link>
+    <description>Recent content in Misc on ginuerzh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>ginuerzh@gmail.com (Gerry)</managingEditor>
+    <webMaster>ginuerzh@gmail.com (Gerry)</webMaster>
+    <lastBuildDate>Tue, 31 Oct 2017 11:03:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.ginuerzh.xyz/tags/misc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Elementary Calculus Online版本正式上线</title>
+      <link>https://blog.ginuerzh.xyz/calculus/online/</link>
+      <pubDate>Tue, 31 Oct 2017 11:03:00 +0800</pubDate>
+      <author>ginuerzh@gmail.com (Gerry)</author>
+      <guid>https://blog.ginuerzh.xyz/calculus/online/</guid>
+      <description>近几天，我把H. Jerome Keisler的Elementary Calculus: An Infinitesimal Approach书中的一部分用blog的方是做成了Web版， 今天正式上线了！ 访问</description>
+    </item>
+    
+    <item>
+      <title>跳出阅读的舒适区</title>
+      <link>https://blog.ginuerzh.xyz/reading/</link>
+      <pubDate>Thu, 15 Jun 2017 15:20:16 +0800</pubDate>
+      <author>ginuerzh@gmail.com (Gerry)</author>
+      <guid>https://blog.ginuerzh.xyz/reading/</guid>
+      <description>最近看到一篇关于阅读的文章中，提到了阅读等级的概念，之前在看&amp;lt;万万没想到:用理工科思维理解世界&amp;gt;这本书时里面也提到过这个概念，只</description>
+    </item>
+    
+    <item>
+      <title>0.0</title>
+      <link>https://blog.ginuerzh.xyz/genesis/</link>
+      <pubDate>Tue, 09 May 2017 22:00:00 +0800</pubDate>
+      <author>ginuerzh@gmail.com (Gerry)</author>
+      <guid>https://blog.ginuerzh.xyz/genesis/</guid>
+      <description>上帝说要有光 于是就有了光 我说要有个博客 于是就建了个博客 建博客的这个想法已经有很久了，今天总算开始实施了。为什么之前没有做呢？这里面主要有两个</description>
+    </item>
+    
+  </channel>
+</rss>

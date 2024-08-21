@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>构建云原生在线网页截屏服务</title>
+  <meta property="og:title" content="构建云原生在线网页截屏服务" />
+  <meta name="twitter:title" content="构建云原生在线网页截屏服务" />
+  <meta name="description" content="遗物 以前做项目的时候做过一个网页截屏功能，简单来说就是根据链接给出对应网页内容的截图。为什么需要这个功能呢？这要从需求细节说起。 在移动端一般">
+  <meta property="og:description" content="遗物 以前做项目的时候做过一个网页截屏功能，简单来说就是根据链接给出对应网页内容的截图。为什么需要这个功能呢？这要从需求细节说起。 在移动端一般">
+  <meta name="twitter:description" content="遗物 以前做项目的时候做过一个网页截屏功能，简单来说就是根据链接给出对应网页内容的截图。为什么需要这个功能呢？这要从需求细节说起。 在移动端一般">
+  <meta name="author" content="Gerry"/>
+  <meta property="og:image" content="https://blog.ginuerzh.xyz/img/avatar-icon.png" />
+  <meta name="twitter:image" content="https://blog.ginuerzh.xyz/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@ginuerzh" />
+  <meta name="twitter:creator" content="@ginuerzh" />
+  <meta property="og:url" content="https://blog.ginuerzh.xyz/taste/screenshot" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ginuerzh" />
+
+  <meta name="generator" content="Hugo 0.40.1" />
+  <link rel="canonical" href="https://blog.ginuerzh.xyz/taste/screenshot" />
+  <link rel="alternate" href="https://blog.ginuerzh.xyz/index.xml" type="application/rss+xml" title="ginuerzh">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://blog.ginuerzh.xyz/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://blog.ginuerzh.xyz/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://blog.ginuerzh.xyz/css/highlight.min.css" />
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-98791308-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://blog.ginuerzh.xyz/">ginuerzh</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="目录" href="/categories/">目录</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="标签" href="/tags/">标签</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="关于" href="/about/">关于</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="ginuerzh" href="https://blog.ginuerzh.xyz/">
+            <img class="avatar-img" src="https://blog.ginuerzh.xyz/img/avatar-icon.png" alt="ginuerzh" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>构建云原生在线网页截屏服务</h1>
+                
+                
+                  <span class="post-meta">
+  发表于 2020-03-31 11:57
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h2 id="遗物">遗物</h2>
+
+<p>以前做项目的时候做过一个网页截屏功能，简单来说就是根据链接给出对应网页内容的截图。为什么需要这个功能呢？这要从需求细节说起。</p>
+
+<p>在移动端一般可以通过手机自带的截屏功能来截取网页图片，但如果想让截图内容与实际网页内容差异化，这种方式就不可行了。例如我想截取一篇文章分享给朋友，但文章可能比较长，无法截取完整，需要在截图中显示内容概要而不是完整的内容，同时可以在每个截图里放上二维码，通过扫码可以看到具体的内容。此时一个在线网页截屏服务就很有必要了。</p>
+
+<p>之前就想到，这其实是很通用的服务，只是最后做完了也就没有再去摆弄了，最近忽然想起来了，索性重新构建一下，算是总结吧。</p>
+
+<h2 id="headless-chrome">Headless Chrome</h2>
+
+<p>也是通过这个功能让我了解到Chrome的<a href="https://developers.google.com/web/updates/2017/04/headless-chrome">headless</a>模式，及其所提供的开发工具，其中就包括截屏功能。所谓的headless，意思就是没有GUI，既可以把它当作命令行工具直接使用，也可以单独作为一个服务，通过API与其交互。</p>
+
+<p>例如：</p>
+
+<p>命令行模式：</p>
+
+<pre><code>chrome --headless --disable-gpu --screenshot https://www.google.com/
+</code></pre>
+
+<p>上面的命令直接可以截取google.com的页面保存为<code>screenshot.png</code>文件。</p>
+
+<p>服务模式：</p>
+
+<pre><code>chrome --headless --disable-gpu --remote-debugging-port=9222
+</code></pre>
+
+<p>在服务模式下，可以通过9222端口与其通讯。</p>
+
+<pre><code>curl http://127.0.0.1:9222/json/version
+</code></pre>
+
+<p>会输出类似与下面的JSON信息</p>
+
+<pre><code>{
+   &quot;Browser&quot;: &quot;HeadlessChrome/79.0.3945.130&quot;,
+   &quot;Protocol-Version&quot;: &quot;1.3&quot;,
+   &quot;User-Agent&quot;: &quot;Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/79.0.3945.130 Safari/537.36&quot;,
+   &quot;V8-Version&quot;: &quot;7.9.317.33&quot;,
+   &quot;WebKit-Version&quot;: &quot;537.36 (@e22de67c28798d98833a7137c0e22876237fc40a)&quot;,
+   &quot;webSocketDebuggerUrl&quot;: &quot;ws://127.0.0.1:9222/devtools/browser/94cf07a5-b271-49fc-b100-613ac0041e5b&quot;
+}
+</code></pre>
+
+<p>然后就可以通过<code>webSocketDebuggerUrl</code>中给的URL来做具体的事情了。</p>
+
+<p>详细的API文档可以访问：<a href="https://chromedevtools.github.io/devtools-protocol/">https://chromedevtools.github.io/devtools-protocol/</a></p>
+
+<p>Chrome提供的功能非常多，这里只使用到其截屏(Screenshot)和打印PDF(PrintToPDF)功能。</p>
+
+<p>由于不需要GUI，完全可以把它放到容器里运行，这样就简化了很多，也方便后面的部署。</p>
+
+<p>我根据<a href="https://github.com/Zenika/alpine-chrome">Zenika/alpine-chrome</a>这个库的Dockerfile文件构建了一个<a href="https://hub.docker.com/r/zenika/alpine-chrome/">alpine-chrome</a>镜像，主要是增加了字体库(font-noto, font-noto-cjk, font-noto-emoji)对中文和表情符的支持。</p>
+
+<h2 id="chromedp">chromedp</h2>
+
+<p>开发方面比较有名的是官方<a href="https://github.com/puppeteer/puppeteer">Puppeteer</a> NodeJS库，但我主要用的是Go，还好Go也有相应的库<a href="https://github.com/chromedp/chromedp">chromedp</a>。</p>
+
+<p>至于两种模式的选择，由于是要做成服务，而不是工具，使用服务模式就很自然了。</p>
+
+<p>当中遇到的两个值得注意的问题也在这里提一提：</p>
+
+<blockquote>
+<p>Websocket API</p>
+</blockquote>
+
+<p>chrome在启动时会自动生成一个动态API地址类似于：</p>
+
+<pre><code>ws://127.0.0.1:9222/devtools/browser/94cf07a5-b271-49fc-b100-613ac0041e5b
+</code></pre>
+
+<p>后面的<code>94cf07a5-b271-49fc-b100-613ac0041e5b</code>部分是一个动态生成的GUID，目前也没有找到方法来手动指定。</p>
+
+<p>好在chrome也提供了API来获取这个地址(<a href="https://github.com/puppeteer/puppeteer/issues/940">issue#940</a>)，就是上面提到的<code>/json/version</code> API返回信息中的<code>webSocketDebuggerUrl</code>字段，这样就不需要提前知道这个地址了。</p>
+
+<p>这个动态地址也会给部署带来问题，后面会提到。</p>
+
+<blockquote>
+<p>Host Header</p>
+</blockquote>
+
+<p>还是接口问题，如果发送给chrome的请求中<code>Host</code>头部设置的不是localhost或IP的话，例如<code>http://chrome:9222/json/version</code>，chrome会报错：</p>
+
+<pre><code>Host header is specified and is not an IP address or localhost
+</code></pre>
+
+<p>也就是说，chrome要求Host要么不设，要么就必须是localhost或具体的IP。</p>
+
+<p>根据<a href="https://github.com/chromedp/chromedp/issues/505">issue#505</a>中提到的方法可以规避这个问题，具体做法就是把请求中的Host头设置为localhost，然后在返回的websocket链接中再把localhost替换成原本的地址(好在websocket接口没有这个限制)。</p>
+
+<p>具体代码放在<a href="https://github.com/ginuerzh/screenshot">ginuerzh/screenshot</a>。</p>
+
+<h2 id="部署">部署</h2>
+
+<p>一切就绪，接下来就可以部署了，因为都做成了Docker镜像，所以直接用docker或docker-compose运行就可以了。</p>
+
+<p>俗话说双拳难敌四手，一个不能动态扩容的服务不是一个好服务，但在扩容之前，还要解决一个问题。上面提到过，chrome给的websocket接口地址是动态的，如果简单的对chrome容器进行扩容，每个容器的地址都是不一样的，而<code>/json/version</code>和websocket请求是分开的两个请求，这样就不能保证你的请求发送给了对应的chrome实例。</p>
+
+<p>这个时候k8s就发挥作用了，把screenshot服务与chrome放在同一个pod中，部署方式由M:N变成1:1，这样即不用暴露chrome服务，每个screenshot服务也不用考虑会连错chrome实例。</p>
+
+<p>可以通过以下操作进行测试：</p>
+
+<pre><code>$ kubectl apply -f https://raw.githubusercontent.com/ginuerzh/screenshot/master/k8s.yaml
+$ kubectl port-forward svc/screenshot --address 0.0.0.0 -n screenshot 8080:8080
+</code></pre>
+
+<p>然后在浏览器中打开</p>
+
+<pre><code>http://localhost:8080/screenshot?url=https://bing.com&amp;mobile=1
+</code></pre>
+
+<p>就可以看到截取到的bing.com网页了。</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://blog.ginuerzh.xyz/taste/docker-multiarch/" data-toggle="tooltip" data-placement="top" title="自动化构建多平台Docker镜像">&larr; 上一篇</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://blog.ginuerzh.xyz/taste/photoprism/" data-toggle="tooltip" data-placement="top" title="Google相册的私有云替代方案">下一篇 &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "blog-ginuerzh-xyz" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:ginuerzh@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/ginuerzh" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.plus.google.com/107672470345374793796" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/ginuerzh" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/ginuerzh" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/2013767/ginuerzh" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/ginuerzh" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://blog.ginuerzh.xyz/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          Gerry
+          &nbsp;&bull;&nbsp;
+          2023
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://blog.ginuerzh.xyz/">ginuerzh</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.40.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://blog.ginuerzh.xyz/js/main.js"></script>
+<script src="https://blog.ginuerzh.xyz/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+  </body>
+</html>
+

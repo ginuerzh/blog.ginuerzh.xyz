@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Taste on ginuerzh</title>
+    <link>https://blog.ginuerzh.xyz/tags/taste/</link>
+    <description>Recent content in Taste on ginuerzh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>ginuerzh@gmail.com (Gerry)</managingEditor>
+    <webMaster>ginuerzh@gmail.com (Gerry)</webMaster>
+    <lastBuildDate>Wed, 05 Apr 2023 12:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.ginuerzh.xyz/tags/taste/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>打造私人云游戏平台</title>
+      <link>https://blog.ginuerzh.xyz/taste/cloudgame/</link>
+      <pubDate>Wed, 05 Apr 2023 12:00:00 +0800</pubDate>
+      <author>ginuerzh@gmail.com (Gerry)</author>
+      <guid>https://blog.ginuerzh.xyz/taste/cloudgame/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>分享我的私有云平台方案</title>
+      <link>https://blog.ginuerzh.xyz/taste/self-hosting/</link>
+      <pubDate>Tue, 16 Aug 2022 23:41:00 +0800</pubDate>
+      <author>ginuerzh@gmail.com (Gerry)</author>
+      <guid>https://blog.ginuerzh.xyz/taste/self-hosting/</guid>
+      <description>这里使用私有云这个词难免会有些浮夸，或许叫做自托管(self-hosted)服务会更合适，鉴于私有云高大上的特点，这里就继续沿用这个词。文章</description>
+    </item>
+    
+    <item>
+      <title>Google相册的私有云替代方案</title>
+      <link>https://blog.ginuerzh.xyz/taste/photoprism/</link>
+      <pubDate>Sat, 06 Aug 2022 23:55:00 +0800</pubDate>
+      <author>ginuerzh@gmail.com (Gerry)</author>
+      <guid>https://blog.ginuerzh.xyz/taste/photoprism/</guid>
+      <description>目前我所有的照片和视频都是存在Google相册中，十几年的积累，大概有个几万张，最近想把照片备份一下，虽然绝大多数可能没有多少价值，但如果丢</description>
+    </item>
+    
+    <item>
+      <title>构建云原生在线网页截屏服务</title>
+      <link>https://blog.ginuerzh.xyz/taste/screenshot/</link>
+      <pubDate>Tue, 31 Mar 2020 11:57:00 +0800</pubDate>
+      <author>ginuerzh@gmail.com (Gerry)</author>
+      <guid>https://blog.ginuerzh.xyz/taste/screenshot/</guid>
+      <description>遗物 以前做项目的时候做过一个网页截屏功能，简单来说就是根据链接给出对应网页内容的截图。为什么需要这个功能呢？这要从需求细节说起。 在移动端一般</description>
+    </item>
+    
+    <item>
+      <title>自动化构建多平台Docker镜像</title>
+      <link>https://blog.ginuerzh.xyz/taste/docker-multiarch/</link>
+      <pubDate>Sat, 14 Mar 2020 14:33:00 +0800</pubDate>
+      <author>ginuerzh@gmail.com (Gerry)</author>
+      <guid>https://blog.ginuerzh.xyz/taste/docker-multiarch/</guid>
+      <description>背景 这段时间一直在(被)折腾k8s和istio，为了搭建这个平台也是费尽心思，从硬件到软件全程的折腾。 首先是硬件的选择，为了能7X24小时不</description>
+    </item>
+    
+    <item>
+      <title>Chromebook &#43; Raspberry Pi = Oh shit ...... 真香!</title>
+      <link>https://blog.ginuerzh.xyz/taste/chromebook/</link>
+      <pubDate>Sun, 08 Dec 2019 15:28:00 +0800</pubDate>
+      <author>ginuerzh@gmail.com (Gerry)</author>
+      <guid>https://blog.ginuerzh.xyz/taste/chromebook/</guid>
+      <description>很多年前就想买一台chromebook玩玩，今年终于入手了，一台Samsung Chromebook Plus V2。 如今的ChromeOS已经提供了(几乎)完整的Lin</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Memoirs on ginuerzh</title>
+    <link>https://blog.ginuerzh.xyz/categories/memoirs/</link>
+    <description>Recent content in Memoirs on ginuerzh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>ginuerzh@gmail.com (Gerry)</managingEditor>
+    <webMaster>ginuerzh@gmail.com (Gerry)</webMaster>
+    <lastBuildDate>Wed, 10 May 2017 20:30:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.ginuerzh.xyz/categories/memoirs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sublime? Atom? VSCode?</title>
+      <link>https://blog.ginuerzh.xyz/text-editor/</link>
+      <pubDate>Wed, 10 May 2017 20:30:00 +0800</pubDate>
+      <author>ginuerzh@gmail.com (Gerry)</author>
+      <guid>https://blog.ginuerzh.xyz/text-editor/</guid>
+      <description>今天有三个异父异母的货色一字排开让我作出选择，他们分别是：Sublime，Atom，VSCode。 这是个问题，而且是要解决的一个问题。 在这个</description>
+    </item>
+    
+  </channel>
+</rss>
