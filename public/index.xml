@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>ginuerzh@gmail.com (Gerry)</managingEditor>
     <webMaster>ginuerzh@gmail.com (Gerry)</webMaster>
-    <lastBuildDate>Wed, 05 Apr 2023 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 16 Aug 2022 23:41:00 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.ginuerzh.xyz/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>打造私人云游戏平台</title>
-      <link>https://blog.ginuerzh.xyz/taste/cloudgame/</link>
-      <pubDate>Wed, 05 Apr 2023 12:00:00 +0800</pubDate>
-      <author>ginuerzh@gmail.com (Gerry)</author>
-      <guid>https://blog.ginuerzh.xyz/taste/cloudgame/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>分享我的私有云平台方案</title>

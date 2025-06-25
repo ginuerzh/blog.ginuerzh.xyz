@@ -3,6 +3,6 @@
 # ADD . .
 # RUN hugo 
 
-FROM nginx:1.18-alpine
+FROM nginx:alpine
 # COPY --from=hugo /src/public /usr/share/nginx/html
 COPY public /usr/share/nginx/html
